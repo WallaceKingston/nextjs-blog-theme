@@ -5,14 +5,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en" className="theme-compiled">
-        <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:wght@600;800&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head />
         <body
           className={`antialiased text-lg bg-white dark:bg-gray-900 dark:text-white leading-base`}
         >
