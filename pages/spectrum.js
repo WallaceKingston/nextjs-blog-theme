@@ -5,7 +5,8 @@ import {
   HiGlobeAlt,
   HiEmojiHappy,
   HiChatBubbleOvalLeftEllipsis,
-  HiNewspaper,
+  HiChevronLeft,
+  HiChevronRight,
 } from 'react-icons/hi2';
 import { FaEraser } from 'react-icons/fa6';
 
@@ -72,9 +73,9 @@ export default function SpectrumDashboard() {
       </header>
 
       {/* Hero */}
-      <section className="bg-[#004EFF] text-white py-8 flex flex-col items-center text-center relative overflow-hidden">
+      <section className="bg-[#004EFF] text-white py-10 px-3 flex flex-col items-center text-center relative overflow-hidden">
         <h2 className="uppercase tracking-wide text-base md:text-lg mb-3">welcome to</h2>
-        <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
+        <div className="flex items-center space-x-5">
           {/* Pixel diamond */}
           <div className="grid grid-cols-4 gap-0.5">
             {[...Array(16)].map((_, i) => (
@@ -85,8 +86,8 @@ export default function SpectrumDashboard() {
             ))}
           </div>
           <div className="text-left leading-none">
-            <p className="tracking-[0.35em] text-xs md:text-sm font-medium mb-1">N I N T E N D O</p>
-            <h1 className="font-extrabold text-4xl md:text-6xl lg:text-7xl">Spectrum</h1>
+            <p className="tracking-[0.35em] text-xs md:text-sm font-medium mb-1" style={{ fontFamily: 'Exo, sans-serif' }}>N I N T E N D O</p>
+            <h1 className="font-extrabold italic text-4xl md:text-6xl lg:text-7xl" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>Spectrum</h1>
           </div>
         </div>
         <p className="text-base md:text-lg italic mt-2">watch, listen, play.</p>
@@ -94,13 +95,13 @@ export default function SpectrumDashboard() {
 
       {/* App Grid */}
       <main className="flex items-center justify-center bg-[#0062FF] py-10">
-        <button aria-label="Previous" className="text-white text-4xl px-6 font-light">&#8249;</button>
+        <button aria-label="Previous" className="text-white p-2 md:p-3"><HiChevronLeft className="w-10 h-10" /></button>
         <div className="grid grid-cols-5 gap-x-8 gap-y-6">
           {APPS.map((app) => (
             <AppTile key={app.label} label={app.label} color={app.color} />
           ))}
         </div>
-        <button aria-label="Next" className="text-white text-4xl px-6 font-light">&#8250;</button>
+        <button aria-label="Next" className="text-white p-2 md:p-3"><HiChevronRight className="w-10 h-10" /></button>
       </main>
 
       {/* Bottom Nav */}
@@ -110,7 +111,7 @@ export default function SpectrumDashboard() {
         <HiEmojiHappy className="text-[#FFD23C] w-8 h-8" />
         <HiChatBubbleOvalLeftEllipsis className="text-[#29C554] w-8 h-8" />
         <FaEraser className="text-[#FAD400] w-8 h-8" />
-        <HiNewspaper className="text-[#F01818] w-8 h-8" />
+        <span className="bg-[#E01111] text-white font-bold text-xs leading-none px-2 py-1 rounded-md">NEWS</span>
       </footer>
     </>
   );
