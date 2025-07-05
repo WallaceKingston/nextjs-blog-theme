@@ -9,6 +9,13 @@ import {
   HiChevronRight,
 } from 'react-icons/hi2';
 import { FaEraser } from 'react-icons/fa6';
+import {
+  FaShoppingBag,
+  FaGlobeAmericas,
+  FaRegSmile,
+  FaRegCommentDots,
+  FaPencilAlt,
+} from 'react-icons/fa';
 
 const APPS = [
   { label: 'Spectrum Caddy', color: 'bg-[#0B4EF6] text-white' },
@@ -95,22 +102,22 @@ export default function SpectrumDashboard() {
 
       {/* App Grid */}
       <main className="flex items-center justify-center bg-[#0062FF] py-10">
-        <button aria-label="Previous" className="text-white p-2 md:p-3"><HiChevronLeft className="w-10 h-10" /></button>
+        <button aria-label="Previous" className="text-white p-2 md:p-3"><HiChevronLeft className="w-12 h-12" /></button>
         <div className="grid grid-cols-5 gap-x-8 gap-y-6">
           {APPS.map((app) => (
             <AppTile key={app.label} label={app.label} color={app.color} />
           ))}
         </div>
-        <button aria-label="Next" className="text-white p-2 md:p-3"><HiChevronRight className="w-10 h-10" /></button>
+        <button aria-label="Next" className="text-white p-2 md:p-3"><HiChevronRight className="w-12 h-12" /></button>
       </main>
 
       {/* Bottom Nav */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-[#3AD1FF] py-2 flex items-center justify-center space-x-10 shadow-inner">
-        <HiShoppingBag className="text-[#F2A623] w-8 h-8" />
-        <HiGlobeAlt className="text-[#1C9CF5] w-8 h-8" />
-        <HiEmojiHappy className="text-[#FFD23C] w-8 h-8" />
-        <HiChatBubbleOvalLeftEllipsis className="text-[#29C554] w-8 h-8" />
-        <FaEraser className="text-[#FAD400] w-8 h-8" />
+      <footer className="fixed bottom-0 left-0 right-0 bg-[#3ACFFF] py-2 flex items-center justify-center space-x-10 shadow-inner">
+        <FaShoppingBag className="text-[#FFCB05] w-8 h-8" />
+        <FaGlobeAmericas className="text-[#0F9DFF] w-8 h-8" />
+        <FaRegSmile className="text-[#FFD23C] w-8 h-8" />
+        <FaRegCommentDots className="text-[#29C554] w-8 h-8" />
+        <FaPencilAlt className="text-[#FAD400] w-8 h-8" />
         <span className="bg-[#E01111] text-white font-bold text-xs leading-none px-2 py-1 rounded-md">NEWS</span>
       </footer>
     </>
