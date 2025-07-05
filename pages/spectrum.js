@@ -30,7 +30,7 @@ const APPS = [
 function AppTile({ label, color }) {
   return (
     <div
-      className={`flex items-center justify-center h-32 w-[11rem] rounded-lg border border-white/25 shadow-md ${color}`}
+      className={`flex items-center justify-center h-36 w-[12rem] rounded-lg border border-white/25 shadow-md ${color}`}
     >
       <span className="text-sm font-semibold text-center px-2 leading-tight">
         {label}
@@ -65,15 +65,15 @@ export default function SpectrumDashboard() {
       </Head>
 
       {/* Top Bar */}
-      <header className="flex items-center justify-between px-4 py-1.5 bg-[#002AFF] text-white text-base font-semibold tracking-wide">
-        <div className="font-semibold">Spectruini</div>
+      <header className="flex items-center justify-between px-4 py-1.5 bg-[#0028F2] text-white text-base font-semibold tracking-wide">
+        <div className="font-semibold">Spectrum</div>
         <div className="uppercase tracking-wide">Main Menu</div>
         <ClientOnlyDate />
       </header>
 
       {/* Hero */}
-      <section className="bg-[#0044FF] text-white py-8 flex flex-col items-center text-center relative overflow-hidden">
-        <h2 className="uppercase tracking-wide text-lg md:text-xl mb-4">welcome to</h2>
+      <section className="bg-[#004EFF] text-white py-8 flex flex-col items-center text-center relative overflow-hidden">
+        <h2 className="uppercase tracking-wide text-base md:text-lg mb-3">welcome to</h2>
         <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
           {/* Pixel diamond */}
           <div className="grid grid-cols-4 gap-0.5">
@@ -85,7 +85,7 @@ export default function SpectrumDashboard() {
             ))}
           </div>
           <div className="text-left leading-none">
-            <p className="tracking-widest text-xs md:text-sm mb-1">N I N T E N D O</p>
+            <p className="tracking-[0.35em] text-xs md:text-sm font-medium mb-1">N I N T E N D O</p>
             <h1 className="font-extrabold text-4xl md:text-6xl lg:text-7xl">Spectrum</h1>
           </div>
         </div>
@@ -93,9 +93,9 @@ export default function SpectrumDashboard() {
       </section>
 
       {/* App Grid */}
-      <main className="flex items-center justify-center bg-[#0052FF] py-8">
+      <main className="flex items-center justify-center bg-[#0062FF] py-10">
         <button aria-label="Previous" className="text-white text-4xl px-6 font-light">&#8249;</button>
-        <div className="grid grid-cols-5 gap-6">
+        <div className="grid grid-cols-5 gap-x-8 gap-y-6">
           {APPS.map((app) => (
             <AppTile key={app.label} label={app.label} color={app.color} />
           ))}
@@ -104,13 +104,13 @@ export default function SpectrumDashboard() {
       </main>
 
       {/* Bottom Nav */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-[#38CBFF] py-2 flex items-center justify-center space-x-8 text-3xl shadow-inner">
-        <HiShoppingBag className="text-[#F2A623]" />
-        <HiGlobeAlt className="text-[#1C9CF5]" />
-        <HiEmojiHappy className="text-[#F7A500]" />
-        <HiChatBubbleOvalLeftEllipsis className="text-[#29C554]" />
-        <FaEraser className="text-[#FAD400]" />
-        <HiNewspaper className="text-[#F01818]" />
+      <footer className="fixed bottom-0 left-0 right-0 bg-[#3AD1FF] py-2 flex items-center justify-center space-x-10 shadow-inner">
+        <HiShoppingBag className="text-[#F2A623] w-8 h-8" />
+        <HiGlobeAlt className="text-[#1C9CF5] w-8 h-8" />
+        <HiEmojiHappy className="text-[#FFD23C] w-8 h-8" />
+        <HiChatBubbleOvalLeftEllipsis className="text-[#29C554] w-8 h-8" />
+        <FaEraser className="text-[#FAD400] w-8 h-8" />
+        <HiNewspaper className="text-[#F01818] w-8 h-8" />
       </footer>
     </>
   );
