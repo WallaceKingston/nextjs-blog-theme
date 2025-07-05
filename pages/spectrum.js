@@ -1,5 +1,13 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import {
+  HiShoppingBag,
+  HiGlobeAlt,
+  HiEmojiHappy,
+  HiChatBubbleOvalLeftEllipsis,
+  HiNewspaper,
+} from 'react-icons/hi2';
+import { FaEraser } from 'react-icons/fa6';
 
 const APPS = [
   { label: 'Spectrum Caddy', color: 'bg-[#0B4EF6] text-white' },
@@ -22,7 +30,7 @@ const APPS = [
 function AppTile({ label, color }) {
   return (
     <div
-      className={`flex items-center justify-center h-32 w-44 rounded-lg border border-white/20 shadow-lg ${color}`}
+      className={`flex items-center justify-center h-32 w-[11rem] rounded-lg border border-white/25 shadow-md ${color}`}
     >
       <span className="text-sm font-semibold text-center px-2 leading-tight">
         {label}
@@ -57,7 +65,7 @@ export default function SpectrumDashboard() {
       </Head>
 
       {/* Top Bar */}
-      <header className="flex items-center justify-between px-4 py-1.5 bg-[#003AFF] text-white text-sm">
+      <header className="flex items-center justify-between px-4 py-1.5 bg-[#002AFF] text-white text-base font-semibold tracking-wide">
         <div className="font-semibold">Spectruini</div>
         <div className="uppercase tracking-wide">Main Menu</div>
         <ClientOnlyDate />
@@ -65,7 +73,7 @@ export default function SpectrumDashboard() {
 
       {/* Hero */}
       <section className="bg-[#0044FF] text-white py-8 flex flex-col items-center text-center relative overflow-hidden">
-        <h2 className="uppercase tracking-wide text-xl mb-4">welcome to</h2>
+        <h2 className="uppercase tracking-wide text-lg md:text-xl mb-4">welcome to</h2>
         <div className="flex items-center space-x-4 md:space-x-6 lg:space-x-8">
           {/* Pixel diamond */}
           <div className="grid grid-cols-4 gap-0.5">
@@ -86,20 +94,23 @@ export default function SpectrumDashboard() {
 
       {/* App Grid */}
       <main className="flex items-center justify-center bg-[#0052FF] py-8">
-        <button className="text-white text-4xl px-4">&#8249;</button>
+        <button aria-label="Previous" className="text-white text-4xl px-6 font-light">&#8249;</button>
         <div className="grid grid-cols-5 gap-6">
           {APPS.map((app) => (
             <AppTile key={app.label} label={app.label} color={app.color} />
           ))}
         </div>
-        <button className="text-white text-4xl px-4">&#8250;</button>
+        <button aria-label="Next" className="text-white text-4xl px-6 font-light">&#8250;</button>
       </main>
 
       {/* Bottom Nav */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-[#53DBFF] py-2 flex items-center justify-center space-x-6 text-2xl">
-        {['🎒', '🌐', '😊', '💬', '📝', '📰'].map((icon, idx) => (
-          <span key={idx}>{icon}</span>
-        ))}
+      <footer className="fixed bottom-0 left-0 right-0 bg-[#38CBFF] py-2 flex items-center justify-center space-x-8 text-3xl shadow-inner">
+        <HiShoppingBag className="text-[#F2A623]" />
+        <HiGlobeAlt className="text-[#1C9CF5]" />
+        <HiEmojiHappy className="text-[#F7A500]" />
+        <HiChatBubbleOvalLeftEllipsis className="text-[#29C554]" />
+        <FaEraser className="text-[#FAD400]" />
+        <HiNewspaper className="text-[#F01818]" />
       </footer>
     </>
   );
